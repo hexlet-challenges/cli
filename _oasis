@@ -1,0 +1,16 @@
+Name: hexletCli
+Version: 0.1
+Synopsis: library
+Authors: <mokevnin@gmail.com>
+License: LGPL with OCaml linking exception
+
+Description: Description
+Homepage: https://hexlet.io
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Executable "hexlet"
+  Path: src
+  MainIs: main.ml
