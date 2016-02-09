@@ -1,0 +1,27 @@
+- hosts: all
+
+  tasks:
+  - name: Add OCaml apt repository
+    apt_repository: repo=ppa:avsm/ppa
+    become: yes
+
+  - name: Install OPAM
+    apt: name={{ item }} state=present
+    with_items:
+      - m4
+      - opam
+      - ocaml
+      - ocaml-native-compilers
+    become: yes
+
+  - name: Initialize OPAM
+    command: opam init -a -y
+    args:
+      creates: /home/vagrant/.opam
+    become_user: vagrant
+    become: yes
+
+  - name: Install Oasis
+    command: opam install -y oasis
+    args:
+      creates: /home/vagrant/.opam/packages/oasis

@@ -2,3 +2,4 @@ _build
 main.byte
 *.log
 setup.data
+.vagrant/
