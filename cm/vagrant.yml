@@ -1,5 +1,6 @@
 - hosts: all
-
+  gather_facts: no
+  
   tasks:
   - name: Add OCaml apt repository
     apt_repository: repo=ppa:avsm/ppa
